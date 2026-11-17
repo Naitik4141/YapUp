@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build --outDir dist/client && node scripts/build-worker.mjs",
+    "dev": "vite index.dev.html",
+    "build": "tsc -b && vite build --outDir dist/client && cp dist/client/index.dev.html dist/client/index.html && cp dist/client/index.dev.html dist/client/404.html && cp -r dist/client/assets ./ && cp dist/client/index.dev.html ./index.html && cp dist/client/index.dev.html ./404.html && node scripts/build-worker.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
